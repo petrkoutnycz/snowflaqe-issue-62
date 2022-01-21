@@ -1,0 +1,9 @@
+{
+    "schema": "schema.gql",
+    "queries": "./queries/",
+    "project": "MyGraphQLClient",
+    "output": "./project/generated",
+    "target": "fsharp",
+    "asyncReturnType": "task",
+    "serializer": "system"
+}

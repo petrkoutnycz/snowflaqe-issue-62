@@ -1,0 +1,8 @@
+query ProductsQuery ($productCodes: [ID!]!) {
+    products (productCodes: $productCodes) {
+        labels {
+            helpText
+            productLabelDomain
+        }
+    }
+}

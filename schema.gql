@@ -1,0 +1,39 @@
+# Query root
+type Query {
+  # Provides products
+  products(
+    # Collection of product codes
+    productCodes: [ID] = null
+  ): [Product!]!
+}
+
+type Product {
+  # List of product labels which have true value
+  labels: [ProductLabel]
+}
+
+type ProductLabel {
+  # Help text
+  helpText: String
+
+  # Key of the label
+  labelKey: ID
+
+  # Product label domain type
+  productLabelDomain: ProductLabelDomainType
+
+  # Title
+  title: String
+}
+
+# Product Label Domain Type
+enum ProductLabelDomainType {
+  # Only Offer, New, SuperDeal
+  Deal
+
+  # All of the ProductLabelType except Offer, New, SuperDeal, AddToBasketVisible
+  PPA
+
+  # Domain Type for AddToBasketVisible ProductLabelType
+  Shopping
+}
